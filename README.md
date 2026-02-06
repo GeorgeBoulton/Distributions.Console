@@ -32,6 +32,6 @@ dotnet run --project Distributions.Console -- 3 1.5 3.6
 ```
 
 Where:
-mu = μ (mean)
-sigmaSquared = σ² (variance, must be > 0)
-x = value to evaluate the PDF at
+* mu = μ (mean)
+* sigmaSquared = σ² (variance, must be > 0)
+* x = value to evaluate the PDF at
