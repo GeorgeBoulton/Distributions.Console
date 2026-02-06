@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="Distributions.Console/Distributions.Console.csproj" />
+  <Project Path="Distributions.Test/Distributions.Test.csproj" />
+  <Project Path="Distributions/Distributions.csproj" />
 </Solution>
