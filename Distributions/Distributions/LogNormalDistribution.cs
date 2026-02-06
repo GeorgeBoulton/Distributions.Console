@@ -1,9 +1,15 @@
-namespace Distributions;
+using Distributions.Models;
+using Distributions.Validation;
+
+namespace Distributions.Distributions;
 
 public sealed class LogNormalDistribution : IDistribution
 {
     public DistributionResult EvaluatePdf(double x, double mu, double sigmaSquared)
     {
+        DistributionValidation.ValidateSigmaSquared(sigmaSquared);
+        DistributionValidation.ValidateXIsPositiveForLogNormal(x);
+        
         // Mean = exp(mu + sigmaSquared / 2)
         var mean = Math.Exp(mu + sigmaSquared / 2);
         // Variance = (exp(sigmaSquared) - 1) * exp(-ln(x) - mu)^2 / (2 * sigmaSquared)

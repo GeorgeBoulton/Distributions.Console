@@ -20,4 +20,9 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Distributions.Console\Distributions.Console.csproj" />
+    <ProjectReference Include="..\Distributions\Distributions.csproj" />
+  </ItemGroup>
+
 </Project>

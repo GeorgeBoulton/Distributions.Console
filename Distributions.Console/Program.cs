@@ -1,7 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Distributions;
+﻿using System.Globalization;
+using System.Runtime.CompilerServices;
+using Distributions.Distributions;
 using Microsoft.Extensions.DependencyInjection;
+
+[assembly: InternalsVisibleTo("MyConsoleApp.Tests")]
 
 var services = new ServiceCollection();
 
@@ -12,6 +14,9 @@ var provider = services.BuildServiceProvider();
 
 var distributions = provider.GetRequiredService<IEnumerable<IDistribution>>();
 
+CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+
+// Validate input
 if (args.Length != 3)
 {
     Console.Error.WriteLine("Usage: <mu> <sigmaSquared> <x>");
@@ -26,6 +31,7 @@ if (!double.TryParse(args[0], out var mu) ||
     return;
 }
 
+// Run distributions
 foreach (var dist in distributions)
 {
     var name = dist switch

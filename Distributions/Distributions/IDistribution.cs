@@ -1,4 +1,6 @@
-namespace Distributions;
+using Distributions.Models;
+
+namespace Distributions.Distributions;
 
 public interface IDistribution
 {
