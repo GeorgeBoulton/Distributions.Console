@@ -21,13 +21,13 @@ Contains tests for the logic
 ## How to Run
 From the solution root, run:
 
-```bash
+```powershell
 dotnet run --project Distributions.Console -- <mu> <sigmaSquared> <x>
 ```
 
 Example
 
-```bash
+```powershell
 dotnet run --project Distributions.Console -- 3 1.5 3.6
 ```
 
